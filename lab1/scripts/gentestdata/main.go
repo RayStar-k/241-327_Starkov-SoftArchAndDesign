@@ -26,7 +26,7 @@ func main() {
 	}
 
 	fake := faker.New()
-	rand.Seed(time.Now().UnixNano())
+	rand.NewSource(time.Now().UnixNano())
 
 	guitars := generateGuitars(fake, 100)
 	log.Printf("Generated %d guitars", len(guitars))
