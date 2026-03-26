@@ -24,6 +24,7 @@ func main() {
 
 	router := gin.Default()
 
+	// Корневой маршрут
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "Guitar Shop API",

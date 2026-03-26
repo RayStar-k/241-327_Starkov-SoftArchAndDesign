@@ -1,0 +1,55 @@
+@hostname = http://localhost:8000
+
+GET {{hostname}}
+Content-Type: application/json
+
+### 
+GET {{hostname}}/api/guitars
+Content-Type: application/json
+
+### 
+GET {{hostname}}/api/guitars?brand=Fender
+Content-Type: application/json
+
+### 
+GET {{hostname}}/api/guitars?category=Electric
+Content-Type: application/json
+
+### 
+GET {{hostname}}/api/guitars?in_stock=true
+Content-Type: application/json
+
+### 
+GET {{hostname}}/api/guitars/1
+Content-Type: application/json
+
+### 
+POST {{hostname}}/api/guitars
+Content-Type: application/json
+
+{
+  "model": "Stratocaster",
+  "brand": "Fender",
+  "category": "Electric",
+  "price": 1299.99,
+  "string_count": 6,
+  "color": "Sunburst",
+  "serial_number": "US12345678",
+  "in_stock": true,
+  "stock_quantity": 5,
+  "year_manufactured": 2023,
+  "description": "Classic American Stratocaster"
+}
+
+### 
+PUT {{hostname}}/api/guitars/1
+Content-Type: application/json
+
+{
+  "price": 1399.99,
+  "stock_quantity": 3
+}
+
+### 
+DELETE {{hostname}}/api/guitars/999
+Content-Type: application/json
